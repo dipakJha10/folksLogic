@@ -1,0 +1,244 @@
+{
+	"info": {
+		"_postman_id": "d50ec416-3003-4611-a590-9fe5ff9e6616",
+		"name": "Folks Logic",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login & Register",
+			"item": [
+				{
+					"name": "Login with email and password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"dipak.jha16b@gmail.com\",\r\n    \"password\":\"Kashyap123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8888/api/logIn",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"logIn"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullName\":\"Deepak Jha\",\r\n    \"email\":\"Dipakjha.16b@gmail.com\",\r\n    \"password\":\"Kashyap123\",\r\n    \"mobile\":\"9814797317\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8888/api/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Products Crud",
+			"item": [
+				{
+					"name": "Delete Product by Signed in user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "yJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmdWxsbmFtZSI6IlJhamFuIEpoYSIsImVtYWlsIjoicmFqYW5qaGE2OTZAZ21haWwuY29tIiwiaWF0IjoxNjcyMTY3OTUwLCJleHAiOjE2NzIxNzE1NTB9.Mmi8rm1LGxgo9R9P7yAB3xbKnLIQya8EUAOlk9vwz2s",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8888/api/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Product by signed in user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmdWxsbmFtZSI6IlJhamFuIEpoYSIsImVtYWlsIjoicmFqYW5qaGE2OTZAZ21haWwuY29tIiwiaWF0IjoxNjcyMTY3OTUwLCJleHAiOjE2NzIxNzE1NTB9.Mmi8rm1LGxgo9R9P7yAB3xbKnLIQya8EUAOlk9vwz2s",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 2,\r\n    \"unitPrice\": 36000,\r\n    \"unitInStock\": 46\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8888/api/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create new Product by Signed user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmdWxsbmFtZSI6IlJhamFuIEpoYSIsImVtYWlsIjoicmFqYW5qaGE2OTZAZ21haWwuY29tIiwiaWF0IjoxNjcyMTY3OTUwLCJleHAiOjE2NzIxNzE1NTB9.Mmi8rm1LGxgo9R9P7yAB3xbKnLIQya8EUAOlk9vwz2s",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productName\": \"I Phone 2\",\r\n    \"productDescription\": \" phone 3\",\r\n    \"quantityPerUnit\": 1,\r\n    \"unitPrice\": 50000,\r\n    \"minimumSellingRetailPrice\": 49000,\r\n    \"discount\": 10,\r\n    \"unitInStock\": 45,\r\n    \"productAvailable\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8888/api/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Products with pagination(un Authenticated API)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8888/api/products?pageNo=3&perPage=20",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"products"
+							],
+							"query": [
+								{
+									"key": "pageNo",
+									"value": "3"
+								},
+								{
+									"key": "perPage",
+									"value": "20"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Products with default pagination(un Authenticated API)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8888/api/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
